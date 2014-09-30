@@ -13,8 +13,9 @@
 
 @property (nonatomic, copy, readonly) NSString *text;
 @property (nonatomic) BOOL correct;
-//@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIImage *image;
 
++ (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct image:(UIImage *)image;
 + (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct;
 
 //- (instancetype)initWithText:(NSString *)text isCorrect:(BOOL)correct;

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "PSRQuize.h"
 #import "PSRQuestion.h"
 #import "PSRAnswer.h"
@@ -19,40 +20,127 @@
 
 @implementation PSRQuize
 
-+ (instancetype)quizeWithQuestions:(NSArray *)quiestions
++ (instancetype)cinemaQuize
 {
-//    NSParameterAssert(quiestions.count > 0);
-    PSRQuize *aQuzie = [PSRQuize new];
-    aQuzie.questions = quiestions;
+    NSArray *quizData = @[@{@"questionText" : @"Кто это?",
+                            @"image" : [UIImage imageNamed:@"firstsQuestion"],
+                            @"answers" : @[@{@"answerText": @"Скарлетт Йохансон",
+                                             @"isCorrect": @YES,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"Анджелина Джоли",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"Дженнифер Энистон",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"Натали Портман",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]}]},
+                          
+                          @{@"questionText" : @"Фильм снят по основам диснеевского мультфильма «Спящая красавица». В каком году состоялась премьера этого мультфильма?",
+                            @"image" : [UIImage imageNamed:@"secondQuestion"],
+                            @"answers" : @[@{@"answerText": @"1959",
+                                             @"isCorrect": @YES,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"1956",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"1951",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"1961",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]}]},
+                          
+                          @{@"questionText" : @"Произведения какого композитора были взяты за основу музыкального сопровождения «Спящей красавицы»?",
+                            @"image" : [NSNull null],
+                            @"answers" : @[@{@"answerText": @"М.И. Глинка",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"Ц.А. Кюи",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"П.И. Чайковский",
+                                             @"isCorrect": @YES,
+                                             @"answerImage": [UIImage imageNamed:@"question3"]},
+                                           
+                                           @{@"answerText": @"Н.А. Римский-Корсаков",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]}]},
+                          
+                          @{@"questionText" : @"Какое проклятие наложила на принцессу Малефисента?",
+                            @"image" : [NSNull null],
+                            @"answers" : @[@{@"answerText": @"Аврора должна будет уколоть свой палец о шипы розы и умереть",
+                                             @"isCorrect": @NO,
+                                             @"image": [NSNull null]},
+                                           
+                                           @{@"answerText": @"Аврора должна будет уколоть свой палец о веретено и уснуть на 100 лет",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"Аврора должна будет откусить отравленное яблоко и умереть",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]},
+                                           
+                                           @{@"answerText": @"Аврора должна будет уколоть свой палец о веретено и умереть",
+                                             @"isCorrect": @YES,
+                                             @"answerImage": [NSNull null]}]},
+                          
+                          
+                          @{@"questionText" : @"Кому принадлежит фраза \"Hasta la vista, baby\"?",
+                            @"image" : [NSNull null],
+                            @"answers" : @[@{@"answerText": @"Стивен Сигал",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [UIImage imageNamed:@"fourthQuestion4"]},
+                                           
+                                           @{@"answerText": @"Арнольд Шварцнеггер",
+                                             @"isCorrect": @YES,
+                                             @"answerImage": [UIImage imageNamed:@"fourthQuestion3"]},
+                                           
+                                           @{@"answerText": @"Сильвестр Сталоне",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [UIImage imageNamed:@"fourthQuestion2"]},
+                                           
+                                           @{@"answerText": @"Аркадий Укупник",
+                                             @"isCorrect": @NO,
+                                             @"answerImage": [NSNull null]}]}];
     
-    return aQuzie;
-}
-
-+ (PSRQuize *)cinemaQuize
-{
-    NSMutableArray *questions = [NSMutableArray new];
-    NSArray *texts = @[@"Кто это?",
-                       @"Фильм снят по основам диснеевского мультфильма «Спящая красавица». В каком году состоялась премьера этого мультфильма?",
-                       @"3). Произведения какого композитора были взяты за основу музыкального сопровождения «Спящей красавицы»?"];
-    NSArray *globalAnwers = @[@[@"а. Скарлетт Йоханссо",@"б. Анджелина Джоли",@"в. Дженнифер Энистон"],
-                              @[@"1959",@"1956",@"145523",@"532523"],
-                              @[@"Корсаков",@"Кюти",@"aas"]];
-    NSArray *images = @[[UIImage imageNamed:@"firstsQuestion"],
-                        [UIImage imageNamed:@"secondQuestion"],
-                        [UIImage imageNamed:@"firstsQuestion"]];
-    for (int i = 0; i < 3; i++){
-        NSMutableArray *localAnswers = [NSMutableArray new];
-        for (NSString *anAnswer in globalAnwers[i]){
-            [localAnswers addObject:[PSRAnswer answerWithText:anAnswer
-                                                    isCorrect:i == 2]];
+    NSMutableArray *questions = [NSMutableArray arrayWithCapacity:quizData.count];
+    for (NSDictionary *questionData in quizData) {
+        
+        NSMutableArray *answers = [NSMutableArray arrayWithCapacity:[questionData[@"answers"] count]];
+        for (NSDictionary *answerData in questionData[@"answers"]) {
+            
+            PSRAnswer *answer;
+            if (answerData[@"answerImage"] == [NSNull null]) {
+                answer = [PSRAnswer answerWithText:answerData[@"answerText"] isCorrect:answerData[@"isCorrect"]];
+            } else {
+                answer = [PSRAnswer answerWithText:answerData[@"answerText"] isCorrect:answerData[@"isCorrect"] image:answerData[@"answerImage"]];
+            }
+            [answers addObject:answer];
         }
-        PSRQuestion *question = [PSRQuestion questionWithText:texts[i]
-                                                        image:images[i]
-                                                      answers:localAnswers];
+        
+        UIImage *questionImage = questionData[@"image"] == [NSNull null] ? nil : questionData[@"image"];
+        PSRQuestion *question = [PSRQuestion questionWithText:questionData[@"questionText"] image:questionImage answers:answers];
         [questions addObject:question];
     }
-    PSRQuize *queze = [PSRQuize quizeWithQuestions:questions];
-    return queze;
+    
+    return [self quizeWithQuestions:questions];
+}
+
++ (instancetype)quizeWithQuestions:(NSArray *)questions
+{
+    PSRQuize *psrQuzie = [[self alloc] init];
+    psrQuzie.questions = [questions copy];
+    return psrQuzie;
 }
 
 - (NSInteger)quiestionsCount
@@ -62,7 +150,7 @@
 
 - (PSRQuestion *)questionAtIndex:(NSInteger)index
 {
-    NSParameterAssert(self.questions.count > index);
+//    NSParameterAssert(self.questions.count > index);
     if (self.questions.count <= index){
         return nil;
     }

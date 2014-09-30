@@ -14,10 +14,11 @@
 
 @property (nonatomic, strong) UIImage *image;
 
-+ (instancetype)quizeWithQuestions:(NSArray *)quiestions;
-+ (PSRQuize *)cinemaQuize;
++ (instancetype)cinemaQuize;
 
-- (PSRQuestion *)questionAtIndex:(NSInteger)index;
++ (instancetype)quizeWithQuestions:(NSArray *)quiestions;
+
 - (NSInteger)quiestionsCount;
+- (PSRQuestion *)questionAtIndex:(NSInteger)index;
 
 @end

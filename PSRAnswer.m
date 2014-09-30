@@ -16,16 +16,23 @@
 
 @implementation PSRAnswer
 
-+ (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct {
-    return [[self alloc] initWithText:text isCorrect:correct];
++ (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct image:(UIImage *)image
+{
+    return [[self alloc] initWithText:text isCorrect:correct image:image];
 }
 
-- (instancetype)initWithText:(NSString *)text isCorrect:(BOOL)correct
++ (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct
+{
+    return [[self alloc] initWithText:text isCorrect:correct image:nil];
+}
+
+- (instancetype)initWithText:(NSString *)text isCorrect:(BOOL)correct image:(UIImage *)image
 {
     self = [super init];
     if (self) {
         _text = [text copy];
         _correct = correct;
+        _image = image;
     }
     return self;
 }

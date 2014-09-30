@@ -31,7 +31,7 @@
 
 - (instancetype)init
 {
-    NSAssert(NO, @"Use anserWithText:isCorrct:");
+    NSAssert(NO, @"Use questionWithText:isCorrct:");
     return nil;
 }
 
