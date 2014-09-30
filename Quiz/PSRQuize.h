@@ -13,10 +13,11 @@
 @interface PSRQuize : NSObject
 
 @property (nonatomic, strong) UIImage *image;
+
 + (instancetype)quizeWithQuestions:(NSArray *)quiestions;
++ (PSRQuize *)cinemaQuize;
+
 - (PSRQuestion *)questionAtIndex:(NSInteger)index;
 - (NSInteger)quiestionsCount;
-
-+ (PSRQuize *)cinemaQuize;
 
 @end

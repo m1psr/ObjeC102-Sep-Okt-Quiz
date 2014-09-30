@@ -8,24 +8,32 @@
 
 #import "PSRAnswer.h"
 
-@interface PSRAnswer ()
-@property (nonatomic, copy, readwrite) NSString *text;
-@end
+//@interface PSRAnswer ()
+//
+//@property (nonatomic, copy, readwrite) NSString *text;
+//
+//@end
 
 @implementation PSRAnswer
 
++ (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct {
+    return [[self alloc] initWithText:text isCorrect:correct];
+}
+
 - (instancetype)initWithText:(NSString *)text isCorrect:(BOOL)correct
 {
-    if (self == [super init]){
-        //1 ?
+    self = [super init];
+    if (self) {
         _text = [text copy];
         _correct = correct;
     }
     return self;
 }
 
-+ (instancetype)answerWithText:(NSString *)text isCorect:(BOOL)correct {
-    return [[PSRAnswer alloc] initWithText:text isCorrect:correct];
+- (instancetype)init
+{
+    NSAssert(NO, @"Use anserWithText:isCorrct:");
+    return nil;
 }
 
 @end

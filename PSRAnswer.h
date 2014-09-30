@@ -6,20 +6,17 @@
 //  Copyright (c) 2014 n.shubenkov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+//@import Foundation;
+@import UIKit;
 
 @interface PSRAnswer : NSObject
 
-//strong
-//weak
-//copy
 @property (nonatomic, copy, readonly) NSString *text;
-@property (nonatomic, strong) UIImage *image;
 @property (nonatomic) BOOL correct;
+//@property (nonatomic, strong) UIImage *image;
 
-+ (instancetype)answerWithText:(NSString *)text isCorect:(BOOL)correct;
++ (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct;
 
-- (instancetype)initWithText:(NSString *)text isCorrect:(BOOL)correct;
+//- (instancetype)initWithText:(NSString *)text isCorrect:(BOOL)correct;
 
 @end

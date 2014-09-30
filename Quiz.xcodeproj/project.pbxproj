@@ -77,7 +77,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FE1A0FBE19D1EB010018FD2D /* QuizeView */ = {
+		0CBA631B19DADABB00844B20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FE4CC49E19D5DE4800DC59E3 /* PSRQuize.h */,
@@ -86,6 +86,13 @@
 				FE1A0FC019D1EF480018FD2D /* PSRQuestion.m */,
 				FE1A0FBB19D1EAE70018FD2D /* PSRAnswer.h */,
 				FE1A0FBC19D1EAE70018FD2D /* PSRAnswer.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FE1A0FBE19D1EB010018FD2D /* QuizeView */ = {
+			isa = PBXGroup;
+			children = (
 				FEBF302319D1DAE700BB62B2 /* PSRQuizViewController.h */,
 				FEBF302419D1DAE700BB62B2 /* PSRQuizViewController.m */,
 			);
@@ -115,6 +122,7 @@
 			children = (
 				FEBF302019D1DAE700BB62B2 /* AppDelegate.h */,
 				FEBF302119D1DAE700BB62B2 /* AppDelegate.m */,
+				0CBA631B19DADABB00844B20 /* Model */,
 				FE1A0FBE19D1EB010018FD2D /* QuizeView */,
 				FEBF302619D1DAE700BB62B2 /* Main.storyboard */,
 				FE4CC4A119D5E64C00DC59E3 /* QuizeCell.h */,

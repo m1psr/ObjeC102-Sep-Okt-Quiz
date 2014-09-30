@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f62-bv-Sod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496" y="-543"/>
+            <point key="canvasLocation" x="840" y="-837"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="2ry-8r-NFT">
@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xu-kz-yMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="-789"/>
+            <point key="canvasLocation" x="391" y="-837"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11" y="114"/>
+            <point key="canvasLocation" x="-181" y="117"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BWz-Vx-pVt">
@@ -319,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9u-4b-zRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459" y="-299"/>
+            <point key="canvasLocation" x="1393" y="-295"/>
         </scene>
     </scenes>
     <resources>

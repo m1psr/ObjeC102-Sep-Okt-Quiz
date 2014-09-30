@@ -21,11 +21,38 @@
 
 + (instancetype)quizeWithQuestions:(NSArray *)quiestions
 {
-    NSParameterAssert(quiestions.count > 0);
+//    NSParameterAssert(quiestions.count > 0);
     PSRQuize *aQuzie = [PSRQuize new];
     aQuzie.questions = quiestions;
     
     return aQuzie;
+}
+
++ (PSRQuize *)cinemaQuize
+{
+    NSMutableArray *questions = [NSMutableArray new];
+    NSArray *texts = @[@"Кто это?",
+                       @"Фильм снят по основам диснеевского мультфильма «Спящая красавица». В каком году состоялась премьера этого мультфильма?",
+                       @"3). Произведения какого композитора были взяты за основу музыкального сопровождения «Спящей красавицы»?"];
+    NSArray *globalAnwers = @[@[@"а. Скарлетт Йоханссо",@"б. Анджелина Джоли",@"в. Дженнифер Энистон"],
+                              @[@"1959",@"1956",@"145523",@"532523"],
+                              @[@"Корсаков",@"Кюти",@"aas"]];
+    NSArray *images = @[[UIImage imageNamed:@"firstsQuestion"],
+                        [UIImage imageNamed:@"secondQuestion"],
+                        [UIImage imageNamed:@"firstsQuestion"]];
+    for (int i = 0; i < 3; i++){
+        NSMutableArray *localAnswers = [NSMutableArray new];
+        for (NSString *anAnswer in globalAnwers[i]){
+            [localAnswers addObject:[PSRAnswer answerWithText:anAnswer
+                                                    isCorrect:i == 2]];
+        }
+        PSRQuestion *question = [PSRQuestion questionWithText:texts[i]
+                                                        image:images[i]
+                                                      answers:localAnswers];
+        [questions addObject:question];
+    }
+    PSRQuize *queze = [PSRQuize quizeWithQuestions:questions];
+    return queze;
 }
 
 - (NSInteger)quiestionsCount
@@ -40,33 +67,6 @@
         return nil;
     }
     return self.questions[index];
-}
-
-+ (PSRQuize *)cinemaQuize
-{
-    NSMutableArray *questions = [NSMutableArray new];
-    NSArray *texts = @[@"Кто это?",
-                      @"Фильм снят по основам диснеевского мультфильма «Спящая красавица». В каком году состоялась премьера этого мультфильма?",
-                      @"3). Произведения какого композитора были взяты за основу музыкального сопровождения «Спящей красавицы»?"];
-    NSArray *globalAnwers = @[@[@"а. Скарлетт Йоханссо",@"б. Анджелина Джоли",@"в. Дженнифер Энистон"],
-                        @[@"1959",@"1956",@"145523",@"532523"],
-                        @[@"Корсаков",@"Кюти",@"aas"]];
-    NSArray *images = @[[UIImage imageNamed:@"firstsQuestion"],
-                        [UIImage imageNamed:@"secondQuestion"],
-                        [UIImage imageNamed:@"firstsQuestion"]];
-    for (int i = 0; i < 3; i++){
-        NSMutableArray *localAnswers = [NSMutableArray new];
-        for (NSString *anAnswer in globalAnwers[i]){
-            [localAnswers addObject:[[PSRAnswer alloc]initWithText:anAnswer
-                                                         isCorrect:i == 2]];
-        }
-        PSRQuestion *question = [[PSRQuestion alloc] initWithText:texts[i]
-                                                            image:images[i]
-                                                          answers:localAnswers];
-        [questions addObject:question];
-    }
-    PSRQuize *queze = [PSRQuize quizeWithQuestions:questions];
-    return queze;
 }
 
 @end
