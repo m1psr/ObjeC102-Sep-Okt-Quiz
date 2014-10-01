@@ -8,17 +8,17 @@
 
 @import UIKit;
 
-#import "PSRQuize.h"
+#import "PSRQuiz.h"
 #import "PSRQuestion.h"
 #import "PSRAnswer.h"
 
-@interface PSRQuize()
+@interface PSRQuiz()
 
 @property (nonatomic, strong) NSArray *questions;
 
 @end
 
-@implementation PSRQuize
+@implementation PSRQuiz
 
 + (instancetype)cinemaQuize
 {
@@ -138,7 +138,7 @@
 
 + (instancetype)quizeWithQuestions:(NSArray *)questions
 {
-    PSRQuize *psrQuzie = [[self alloc] init];
+    PSRQuiz *psrQuzie = [[self alloc] init];
     psrQuzie.questions = [questions copy];
     return psrQuzie;
 }

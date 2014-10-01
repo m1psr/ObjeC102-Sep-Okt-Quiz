@@ -9,7 +9,7 @@
 #import "PSRQuizViewController.h"
 #import "PSRQuizCell.h"
 
-#import "PSRQuize.h"
+#import "PSRQuiz.h"
 #import "PSRAnswer.h"
 #import "PSRQuestion.h"
 
@@ -56,7 +56,7 @@
 - (void)setupModel
 {
     if (!self.aQuize){
-        self.aQuize = [PSRQuize cinemaQuize];
+        self.aQuize = [PSRQuiz cinemaQuize];
     }
 }
 

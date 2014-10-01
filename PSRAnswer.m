@@ -33,7 +33,7 @@
 
 - (instancetype)init
 {
-    NSAssert(NO, @"Use anserWithText:isCorrct:");
+    NSAssert(NO, @"Use anserWithText:isCorret:");
     return nil;
 }
 

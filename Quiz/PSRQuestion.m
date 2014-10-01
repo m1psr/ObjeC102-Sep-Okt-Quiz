@@ -22,14 +22,14 @@
         _text = [text copy];
         _answers = [answers copy];
         _image = image;
-        _selectedIndex = -1;
+        _selectedIndex = -1; // ответ не был выбран
     }
     return self;
 }
 
 - (instancetype)init
 {
-    NSAssert(NO, @"Use questionWithText:isCorrct:");
+    NSAssert(NO, @"Use questionWithText:image:answers:");
     return nil;
 }
 

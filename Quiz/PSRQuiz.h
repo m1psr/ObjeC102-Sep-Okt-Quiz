@@ -10,7 +10,7 @@
 
 @class PSRQuestion;
 
-@interface PSRQuize : NSObject
+@interface PSRQuiz : NSObject
 
 @property (nonatomic, strong) UIImage *image;
 
