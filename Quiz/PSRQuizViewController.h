@@ -6,15 +6,13 @@
 //  Copyright (c) 2014 n.shubenkov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @class PSRQuize;
 
 @interface PSRQuizViewController : UIViewController
 
 @property (nonatomic, strong) PSRQuize *aQuize;
-@property (nonatomic) int currentIndex;
-
-- (IBAction)answerPressed:(UIButton *)sender;
+@property (nonatomic) NSUInteger questionIndex;
 
 @end

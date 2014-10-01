@@ -16,10 +16,7 @@
 }
 
 - (instancetype)initWithText:(NSString *)text image:(UIImage *)image answers:(NSArray *)answers
-{
-//    NSParameterAssert(text.length > 0);
-//    NSAssert(answers.count > 0, @"it is stupid to create queestion without answers %@", @"privet");
-    
+{    
     self = [super init];
     if (self) {
         _text = [text copy];

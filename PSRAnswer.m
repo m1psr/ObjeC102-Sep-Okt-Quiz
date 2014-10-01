@@ -8,12 +8,6 @@
 
 #import "PSRAnswer.h"
 
-//@interface PSRAnswer ()
-//
-//@property (nonatomic, copy, readwrite) NSString *text;
-//
-//@end
-
 @implementation PSRAnswer
 
 + (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct image:(UIImage *)image

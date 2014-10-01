@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 n.shubenkov. All rights reserved.
 //
 
-//@import Foundation;
 @import UIKit;
+
+#define MakePSRAnswer(t,c,i) ([PSRAnswer answerWithText:t isCorrect:c image:i])
 
 @interface PSRAnswer : NSObject
 
@@ -17,7 +18,5 @@
 
 + (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct image:(UIImage *)image;
 + (instancetype)answerWithText:(NSString *)text isCorrect:(BOOL)correct;
-
-//- (instancetype)initWithText:(NSString *)text isCorrect:(BOOL)correct;
 
 @end

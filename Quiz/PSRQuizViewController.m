@@ -7,10 +7,11 @@
 //
 
 #import "PSRQuizViewController.h"
+#import "PSRQuizCell.h"
+
 #import "PSRQuize.h"
 #import "PSRAnswer.h"
 #import "PSRQuestion.h"
-#import "QuizeCell.h"
 
 @interface PSRQuizViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,17 +23,13 @@
 
 @implementation PSRQuizViewController
 
-- (PSRQuestion *)currentQuestion
-{
-    return [self.aQuize questionAtIndex:self.currentIndex];
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     PSRQuizViewController *controller = segue.destinationViewController;
     if ([controller isKindOfClass:[PSRQuizViewController class]]){
         controller.aQuize = self.aQuize;
-        controller.currentIndex = self.currentIndex + 1;
+        controller.questionIndex = self.questionIndex + 1;
     }
 }
 
@@ -42,6 +39,8 @@
     [self setup];
     
 }
+
+#pragma mark - Private Methods
 
 - (void)setup
 {
@@ -59,16 +58,18 @@
 
 - (void)setupViews
 {
-    self.questionImage.image = [self currentQuestion].image;
-    self.questionLabel.text =[self currentQuestion].text;
+    PSRQuestion *currentQuestion = [self currentQuestion];
+    self.questionImage.image = currentQuestion.image ? currentQuestion.image : [UIImage imageNamed:@"questionMarks"];
+    self.questionLabel.text = currentQuestion.text;
+    
     self.answersList.delegate = self;
     self.answersList.dataSource = self;
-    [self.answersList reloadData];
+//    [self.answersList reloadData];
 }
 
-- (IBAction)answerPressed:(UIButton *)sender
+- (PSRQuestion *)currentQuestion
 {
-//    djklsgdfjkbdlkdfskljoloildghio rtdio 
+    return [self.aQuize questionAtIndex:self.questionIndex];
 }
 
 #pragma mark - TableView DataSourse -
@@ -80,18 +81,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    QuizeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"1"];
+    PSRQuizCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PSRQuizCellRIdentifier"];
     
-    [self configureCell:cell
-             withAnswer:[[self currentQuestion] answers][indexPath.row]];
+    [self configureCell:cell withAnswer:[[self currentQuestion] answers][indexPath.row] answerIndex:indexPath.row];
     
     return cell;
 }
 
-- (void)configureCell:(QuizeCell  *)cell withAnswer:(PSRAnswer *)answer
+- (void)configureCell:(PSRQuizCell *)cell withAnswer:(PSRAnswer *)answer answerIndex:(NSInteger)index
 {
-    cell.topText.text = answer.text;
-    cell.bottomText.text = [[self.answersList indexPathForCell:cell] description];
+    cell.answerText.text = answer.text;
+    cell.answerImage.image = answer.image;
+    cell.letterLabel.text = [NSString stringWithFormat:@"%c", 'A' + (char)index];
 }
 
 @end

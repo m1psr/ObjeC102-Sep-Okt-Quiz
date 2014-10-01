@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 n.shubenkov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 #import "PSRQuize.h"
 #import "PSRQuestion.h"
@@ -77,7 +77,7 @@
                                              @"answerImage": [NSNull null]}]},
                           
                           @{@"questionText" : @"Какое проклятие наложила на принцессу Малефисента?",
-                            @"image" : [NSNull null],
+                            @"image" : [UIImage imageNamed:@"melafinesta.jpg"],
                             @"answers" : @[@{@"answerText": @"Аврора должна будет уколоть свой палец о шипы розы и умереть",
                                              @"isCorrect": @NO,
                                              @"image": [NSNull null]},
@@ -123,7 +123,7 @@
             if (answerData[@"answerImage"] == [NSNull null]) {
                 answer = [PSRAnswer answerWithText:answerData[@"answerText"] isCorrect:answerData[@"isCorrect"]];
             } else {
-                answer = [PSRAnswer answerWithText:answerData[@"answerText"] isCorrect:answerData[@"isCorrect"] image:answerData[@"answerImage"]];
+                answer = MakePSRAnswer(answerData[@"answerText"], answerData[@"isCorrect"], answerData[@"answerImage"]);
             }
             [answers addObject:answer];
         }
@@ -150,7 +150,6 @@
 
 - (PSRQuestion *)questionAtIndex:(NSInteger)index
 {
-//    NSParameterAssert(self.questions.count > index);
     if (self.questions.count <= index){
         return nil;
     }
