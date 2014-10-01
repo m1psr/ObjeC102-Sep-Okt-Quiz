@@ -12,6 +12,8 @@
 #import "PSRQuestion.h"
 #import "PSRAnswer.h"
 
+#import "NSMutableArray+PSRShuffling.h"
+
 @interface PSRQuiz()
 
 @property (nonatomic, strong) NSArray *questions;
@@ -127,6 +129,7 @@
             }
             [answers addObject:answer];
         }
+        [answers shuffle];
         
         UIImage *questionImage = questionData[@"image"] == [NSNull null] ? nil : questionData[@"image"];
         PSRQuestion *question = [PSRQuestion questionWithText:questionData[@"questionText"] image:questionImage answers:answers];
