@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C3D500919DC7E6E00278C86 /* PSRQuizHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRQuizHandler.h; sourceTree = "<group>"; };
 		0C4C0A0C19DB3EEF004054F3 /* PSRQuizCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRQuizCell.h; sourceTree = "<group>"; };
 		0C4C0A0D19DB3EEF004054F3 /* PSRQuizCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRQuizCell.m; sourceTree = "<group>"; };
 		FE1A0FBB19D1EAE70018FD2D /* PSRAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSRAnswer.h; path = ../PSRAnswer.h; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 				FE1A0FC019D1EF480018FD2D /* PSRQuestion.m */,
 				FE1A0FBB19D1EAE70018FD2D /* PSRAnswer.h */,
 				FE1A0FBC19D1EAE70018FD2D /* PSRAnswer.m */,
+				0C3D500919DC7E6E00278C86 /* PSRQuizHandler.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";

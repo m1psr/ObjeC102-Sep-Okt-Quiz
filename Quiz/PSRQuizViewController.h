@@ -8,9 +8,11 @@
 
 @import UIKit;
 
+#import "PSRQuizHandler.h"
+
 @class PSRQuiz;
 
-@interface PSRQuizViewController : UIViewController
+@interface PSRQuizViewController : UIViewController <PSRQuizHandler>
 
 @property (nonatomic, strong) PSRQuiz *aQuize;
 @property (nonatomic) NSUInteger questionIndex;

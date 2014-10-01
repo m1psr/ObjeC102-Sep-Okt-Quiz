@@ -26,14 +26,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PSRQuizViewController *controller = segue.destinationViewController;
-    if ([controller isKindOfClass:[PSRQuizViewController class]]){
+    if ([segue.destinationViewController conformsToProtocol:@protocol(PSRQuizHandler)]){
         
         NSUInteger selectedIndex = [self answerLabelToSelectedIndex:[(PSRQuizCell *)sender letterLabel].text];
         [[self currentQuestion] setSelectedIndex:selectedIndex]; // сохраним ответ пользователя
         
-        controller.aQuize = self.aQuize;
-        controller.questionIndex = self.questionIndex + 1;
+        UIViewController<PSRQuizHandler> *quizViewController = segue.destinationViewController;
+        [quizViewController handleQuize:self.aQuize withQuestionIndex:self.questionIndex + 1];
     }
 }
 
@@ -55,7 +54,7 @@
 
 - (void)setupModel
 {
-    if (!self.aQuize){
+    if (!self.aQuize) {
         self.aQuize = [PSRQuiz cinemaQuize];
     }
 }
@@ -107,6 +106,14 @@
     cell.answerText.text = answer.text;
     cell.answerImage.image = answer.image;
     cell.letterLabel.text = [self answerIndexToLabel:index];
+}
+
+#pragma mark - PSRQuizHadler Methods
+
+- (void)handleQuize:(PSRQuiz *)quiz withQuestionIndex:(NSUInteger)questionIndex
+{
+    self.aQuize = quiz;
+    self.questionIndex = questionIndex;
 }
 
 @end
