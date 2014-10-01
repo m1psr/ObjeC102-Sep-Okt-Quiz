@@ -28,6 +28,10 @@
 {
     PSRQuizViewController *controller = segue.destinationViewController;
     if ([controller isKindOfClass:[PSRQuizViewController class]]){
+        
+        NSUInteger selectedIndex = [self answerLabelToSelectedIndex:[(PSRQuizCell *)sender letterLabel].text];
+        [[self currentQuestion] setSelectedIndex:selectedIndex]; // сохраним ответ пользователя
+        
         controller.aQuize = self.aQuize;
         controller.questionIndex = self.questionIndex + 1;
     }
@@ -72,6 +76,16 @@
     return [self.aQuize questionAtIndex:self.questionIndex];
 }
 
+- (NSString *)answerIndexToLabel:(NSInteger)index
+{
+    return [NSString stringWithFormat:@"%c", 'A' + (char)index];
+}
+
+- (NSUInteger)answerLabelToSelectedIndex:(NSString *)answerLabel
+{
+    return (NSUInteger)[answerLabel characterAtIndex:0] - 'A';
+}
+
 #pragma mark - TableView DataSourse -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -92,7 +106,7 @@
 {
     cell.answerText.text = answer.text;
     cell.answerImage.image = answer.image;
-    cell.letterLabel.text = [NSString stringWithFormat:@"%c", 'A' + (char)index];
+    cell.letterLabel.text = [self answerIndexToLabel:index];
 }
 
 @end

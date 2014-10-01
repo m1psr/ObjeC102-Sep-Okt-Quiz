@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, copy) NSArray *answers;
+@property (nonatomic) NSInteger selectedIndex;
 
 + (instancetype)questionWithText:(NSString *)text image:(UIImage *)image answers:(NSArray *)answers;
 

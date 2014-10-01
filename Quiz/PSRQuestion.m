@@ -22,6 +22,7 @@
         _text = [text copy];
         _answers = [answers copy];
         _image = image;
+        _selectedIndex = -1;
     }
     return self;
 }
