@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C3D500C19DC856200278C86 /* NSMutableArray+PSRShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D500B19DC856200278C86 /* NSMutableArray+PSRShuffling.m */; };
 		0C3D500F19DD347400278C86 /* PSRQuizRezult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D500E19DD347400278C86 /* PSRQuizRezult.m */; };
+		0C3D501519DD724800278C86 /* PSRQuizData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D501419DD724800278C86 /* PSRQuizData.m */; };
 		0C4C0A0E19DB3EEF004054F3 /* PSRQuizCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C0A0D19DB3EEF004054F3 /* PSRQuizCell.m */; };
 		FE1A0FBD19D1EAE70018FD2D /* PSRAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1A0FBC19D1EAE70018FD2D /* PSRAnswer.m */; };
 		FE1A0FC119D1EF480018FD2D /* PSRQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1A0FC019D1EF480018FD2D /* PSRQuestion.m */; };
@@ -38,6 +39,8 @@
 		0C3D500B19DC856200278C86 /* NSMutableArray+PSRShuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+PSRShuffling.m"; sourceTree = "<group>"; };
 		0C3D500D19DD347400278C86 /* PSRQuizRezult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRQuizRezult.h; sourceTree = "<group>"; };
 		0C3D500E19DD347400278C86 /* PSRQuizRezult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRQuizRezult.m; sourceTree = "<group>"; };
+		0C3D501319DD724800278C86 /* PSRQuizData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRQuizData.h; sourceTree = "<group>"; };
+		0C3D501419DD724800278C86 /* PSRQuizData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRQuizData.m; sourceTree = "<group>"; };
 		0C4C0A0C19DB3EEF004054F3 /* PSRQuizCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRQuizCell.h; sourceTree = "<group>"; };
 		0C4C0A0D19DB3EEF004054F3 /* PSRQuizCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRQuizCell.m; sourceTree = "<group>"; };
 		FE1A0FBB19D1EAE70018FD2D /* PSRAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSRAnswer.h; path = ../PSRAnswer.h; sourceTree = "<group>"; };
@@ -82,15 +85,17 @@
 		0CBA631B19DADABB00844B20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0C3D500919DC7E6E00278C86 /* PSRQuizHandler.h */,
+				0C3D500A19DC856200278C86 /* NSMutableArray+PSRShuffling.h */,
+				0C3D500B19DC856200278C86 /* NSMutableArray+PSRShuffling.m */,
+				0C3D501319DD724800278C86 /* PSRQuizData.h */,
+				0C3D501419DD724800278C86 /* PSRQuizData.m */,
 				FE4CC49E19D5DE4800DC59E3 /* PSRQuiz.h */,
 				FE4CC49F19D5DE4800DC59E3 /* PSRQuiz.m */,
 				FE1A0FBF19D1EF480018FD2D /* PSRQuestion.h */,
 				FE1A0FC019D1EF480018FD2D /* PSRQuestion.m */,
 				FE1A0FBB19D1EAE70018FD2D /* PSRAnswer.h */,
 				FE1A0FBC19D1EAE70018FD2D /* PSRAnswer.m */,
-				0C3D500919DC7E6E00278C86 /* PSRQuizHandler.h */,
-				0C3D500A19DC856200278C86 /* NSMutableArray+PSRShuffling.h */,
-				0C3D500B19DC856200278C86 /* NSMutableArray+PSRShuffling.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				0C3D500F19DD347400278C86 /* PSRQuizRezult.m in Sources */,
 				FE4CC4A019D5DE4800DC59E3 /* PSRQuiz.m in Sources */,
 				FEBF301F19D1DAE700BB62B2 /* main.m in Sources */,
+				0C3D501519DD724800278C86 /* PSRQuizData.m in Sources */,
 				FE1A0FC119D1EF480018FD2D /* PSRQuestion.m in Sources */,
 				0C4C0A0E19DB3EEF004054F3 /* PSRQuizCell.m in Sources */,
 				FE1A0FBD19D1EAE70018FD2D /* PSRAnswer.m in Sources */,

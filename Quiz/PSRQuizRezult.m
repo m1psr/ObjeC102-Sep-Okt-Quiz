@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *answersRight;
 @property (weak, nonatomic) IBOutlet UILabel *answersTotal;
 @property (weak, nonatomic) IBOutlet UIImageView *resultImage;
+@property (weak, nonatomic) IBOutlet UILabel *resultComment;
 
 @end
 
@@ -64,10 +65,13 @@
     NSUInteger percentOfRights = (NSUInteger)(_quizAnswersRight * 100 / _quizAnswersTotal);
     if (percentOfRights == 100) {
         self.resultImage.image = [UIImage imageNamed:@"Excellent"];
+        self.resultComment.text = @"Ничо так!";
     } else if (percentOfRights > 40) {
         self.resultImage.image = [UIImage imageNamed:@"normal"];
+        self.resultComment.text = @"Норм!";
     } else {
         self.resultImage.image = [UIImage imageNamed:@"bad"];
+        self.resultComment.text = @"Позор!";
     }
 }
 

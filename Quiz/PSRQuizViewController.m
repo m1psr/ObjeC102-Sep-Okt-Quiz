@@ -13,6 +13,8 @@
 #import "PSRAnswer.h"
 #import "PSRQuestion.h"
 
+#import "PSRQuizData.h";
+
 @interface PSRQuizViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *questionImage;
@@ -51,7 +53,7 @@
 - (void)setupModel
 {
     if (!self.aQuize) {
-        self.aQuize = [PSRQuiz cinemaQuize];
+        self.aQuize = [[PSRQuizData sharedInstance] quizDataAtIndex:1];
     }
 }
 
