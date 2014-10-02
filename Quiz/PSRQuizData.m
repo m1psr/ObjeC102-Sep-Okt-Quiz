@@ -55,6 +55,11 @@
     return self.quizes[index][@"quizName"];
 }
 
+- (NSString *)quizAnnounceAtIndex:(NSInteger)index
+{
+    return self.quizes[index][@"quizAnnounce"];
+}
+
 - (UIImage *)quizImageAtIndex:(NSInteger)index
 {
     return self.quizes[index][@"quizImage"];
@@ -99,12 +104,14 @@
     // quiz 1
     
     NSDictionary *quizCinema = @{@"quizName" : @"Cinema Quiz",
+                                 @"quizAnnounce" : @"Викторина про кино",
                                  @"quizImage" : [NSNull null],
                                  @"quizData" : [self cinemaQuiz]};
     
     // quiz 2
     
     NSDictionary *quizAnimal = @{@"quizName" : @"Animals Quiz",
+                                 @"quizAnnounce" : @"Викторина про животных",
                                  @"quizImage" : [NSNull null],
                                  @"quizData" : [self animalQuiz]};
     

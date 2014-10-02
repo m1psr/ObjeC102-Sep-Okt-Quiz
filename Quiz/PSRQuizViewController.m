@@ -13,7 +13,7 @@
 #import "PSRAnswer.h"
 #import "PSRQuestion.h"
 
-#import "PSRQuizData.h";
+#import "PSRQuizData.h"
 
 @interface PSRQuizViewController () <UITableViewDataSource, UITableViewDelegate>
 
