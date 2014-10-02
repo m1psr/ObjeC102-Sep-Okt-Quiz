@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIImage *image;
 
 + (instancetype)cinemaQuize;
++ (instancetype)animalQuize;
 
 + (instancetype)quizeWithQuestions:(NSArray *)quiestions;
 

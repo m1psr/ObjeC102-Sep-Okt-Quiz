@@ -123,9 +123,9 @@
             
             PSRAnswer *answer;
             if (answerData[@"answerImage"] == [NSNull null]) {
-                answer = [PSRAnswer answerWithText:answerData[@"answerText"] isCorrect:answerData[@"isCorrect"]];
+                answer = [PSRAnswer answerWithText:answerData[@"answerText"] isCorrect:[answerData[@"isCorrect"] boolValue]];
             } else {
-                answer = MakePSRAnswer(answerData[@"answerText"], answerData[@"isCorrect"], answerData[@"answerImage"]);
+                answer = MakePSRAnswer(answerData[@"answerText"], [answerData[@"isCorrect"] boolValue], answerData[@"answerImage"]);
             }
             [answers addObject:answer];
         }
@@ -137,6 +137,11 @@
     }
     
     return [self quizeWithQuestions:questions];
+}
+
++ (instancetype)animalQuize
+{
+    return nil;
 }
 
 + (instancetype)quizeWithQuestions:(NSArray *)questions

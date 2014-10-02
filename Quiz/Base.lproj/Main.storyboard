@@ -47,7 +47,7 @@
                                             <outlet property="answerImage" destination="PKg-oc-Yv8" id="SRB-4E-Ots"/>
                                             <outlet property="answerText" destination="t77-cM-tap" id="Bkj-Si-IYv"/>
                                             <outlet property="letterLabel" destination="z9u-a1-kPT" id="63H-w5-D8S"/>
-                                            <segue destination="cPf-Bf-SWE" kind="push" id="4qr-JH-O9j"/>
+                                            <segue destination="cPf-Bf-SWE" kind="push" identifier="PSRQuizViewControllerSegue" id="MGT-ef-idn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -69,11 +69,64 @@
                         <outlet property="answersList" destination="VuS-79-Bhw" id="cib-Qc-PYt"/>
                         <outlet property="questionImage" destination="EHO-ec-nab" id="YWX-FP-Ba8"/>
                         <outlet property="questionLabel" destination="tNE-tq-WmP" id="5gj-Q5-CXr"/>
+                        <segue destination="wsh-QY-uJJ" kind="push" identifier="PSRQuizResultSegue" id="jSi-7n-lCK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQF-IN-R22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="176" y="-642"/>
+        </scene>
+        <!--Quiz Rezult-->
+        <scene sceneID="bLb-IW-zc7">
+            <objects>
+                <viewController id="wsh-QY-uJJ" customClass="PSRQuizRezult" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JaQ-Nm-TEx"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKQ-XP-Xy8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mGE-Ak-zZm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WLE-71-txv">
+                                <rect key="frame" x="85" y="203" width="150" height="150"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eax-G1-bGm">
+                                <rect key="frame" x="16" y="101" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="из" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coX-zN-ZWu">
+                                <rect key="frame" x="16" y="130" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxA-Jz-Hlx">
+                                <rect key="frame" x="16" y="159" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Правильных ответов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64X-sA-A6f">
+                                <rect key="frame" x="16" y="72" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <navigationItem key="navigationItem" id="J3c-4f-XvN"/>
+                    <connections>
+                        <outlet property="answersRight" destination="Eax-G1-bGm" id="oJb-f2-Q2a"/>
+                        <outlet property="answersTotal" destination="MxA-Jz-Hlx" id="S9k-iO-e2X"/>
+                        <outlet property="resultImage" destination="WLE-71-txv" id="06y-ZB-2gn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tmt-RQ-vbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="-645"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="65p-DS-tXz">

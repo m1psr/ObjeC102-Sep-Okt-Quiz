@@ -26,11 +26,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.destinationViewController conformsToProtocol:@protocol(PSRQuizHandler)]){
-        
-        NSUInteger selectedIndex = [self answerLabelToSelectedIndex:[(PSRQuizCell *)sender letterLabel].text];
-        [[self currentQuestion] setSelectedIndex:selectedIndex]; // сохраним ответ пользователя
-        
+    if ([segue.destinationViewController conformsToProtocol:@protocol(PSRQuizHandler)]) {
         UIViewController<PSRQuizHandler> *quizViewController = segue.destinationViewController;
         [quizViewController handleQuize:self.aQuize withQuestionIndex:self.questionIndex + 1];
     }
@@ -99,6 +95,25 @@
     [self configureCell:cell withAnswer:[[self currentQuestion] answers][indexPath.row] answerIndex:indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger selectedIndex = [self answerLabelToSelectedIndex:[(PSRQuizCell *)[tableView cellForRowAtIndexPath:indexPath] letterLabel].text];
+    [[self currentQuestion] setSelectedIndex:selectedIndex]; // сохраним ответ
+    
+    if (self.aQuize.quiestionsCount > self.questionIndex + 1) {
+        [self performSegueWithIdentifier:@"PSRQuizViewControllerSegue" sender:nil];
+    } else {
+        [self performSegueWithIdentifier:@"PSRQuizResultSegue" sender:nil];
+    }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:@"PSRQuizViewControllerSegue"]) {
+        return NO;
+    }
+    return YES;
 }
 
 - (void)configureCell:(PSRQuizCell *)cell withAnswer:(PSRAnswer *)answer answerIndex:(NSInteger)index
