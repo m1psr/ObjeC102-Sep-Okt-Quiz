@@ -14,6 +14,11 @@
 
 #import "NSMutableArray+PSRShuffling.h"
 
+NSString *const kPSRQuizDataQuizNameKey = @"quizName";
+NSString *const kPSRQuizDataQuizAnnounceKey = @"quizAnnounce";
+NSString *const kPSRQuizDataQuizImageKey = @"quizImage";
+NSString *const kPSRQuizDataQuizDataKey = @"quizData";
+
 @interface PSRQuizData ()
 
 @property (nonatomic, strong) NSArray *quizes;
@@ -50,28 +55,28 @@
     return [self.quizes count];
 }
 
-- (NSString *)quizTitleAtIndex:(NSInteger)index
+- (NSString *)quizTitleAtIndex:(NSUInteger)index
 {
-    return self.quizes[index][@"quizName"];
+    return self.quizes[index][kPSRQuizDataQuizNameKey];
 }
 
-- (NSString *)quizAnnounceAtIndex:(NSInteger)index
+- (NSString *)quizAnnounceAtIndex:(NSUInteger)index
 {
-    return self.quizes[index][@"quizAnnounce"];
+    return self.quizes[index][kPSRQuizDataQuizAnnounceKey];
 }
 
-- (UIImage *)quizImageAtIndex:(NSInteger)index
+- (UIImage *)quizImageAtIndex:(NSUInteger)index
 {
-    return self.quizes[index][@"quizImage"];
+    return self.quizes[index][kPSRQuizDataQuizImageKey];
 }
 
-- (PSRQuiz *)quizDataAtIndex:(NSInteger)index
+- (PSRQuiz *)quizDataAtIndex:(NSUInteger)index
 {
     if (index >= [self.quizes count]) {
         return nil;
     }
     
-    NSArray *quizData = self.quizes[index][@"quizData"];
+    NSArray *quizData = self.quizes[index][kPSRQuizDataQuizDataKey];
     
     NSMutableArray *questions = [NSMutableArray arrayWithCapacity:quizData.count];
     for (NSDictionary *questionData in quizData) {
@@ -103,17 +108,17 @@
 {
     // quiz 1
     
-    NSDictionary *quizCinema = @{@"quizName" : @"Cinema Quiz",
-                                 @"quizAnnounce" : @"Викторина про кино",
-                                 @"quizImage" : [NSNull null],
-                                 @"quizData" : [self cinemaQuiz]};
+    NSDictionary *quizCinema = @{kPSRQuizDataQuizNameKey : @"Cinema Quiz",
+                                 kPSRQuizDataQuizAnnounceKey : @"Викторина про кино",
+                                 kPSRQuizDataQuizImageKey : [NSNull null],
+                                 kPSRQuizDataQuizDataKey : [self cinemaQuiz]};
     
     // quiz 2
     
-    NSDictionary *quizAnimal = @{@"quizName" : @"Animals Quiz",
-                                 @"quizAnnounce" : @"Викторина про животных",
-                                 @"quizImage" : [NSNull null],
-                                 @"quizData" : [self animalQuiz]};
+    NSDictionary *quizAnimal = @{kPSRQuizDataQuizNameKey : @"Animals Quiz",
+                                 kPSRQuizDataQuizAnnounceKey : @"Викторина про животных",
+                                 kPSRQuizDataQuizImageKey : [NSNull null],
+                                 kPSRQuizDataQuizDataKey : [self animalQuiz]};
     
     self.quizes = @[quizCinema, quizAnimal];
 }

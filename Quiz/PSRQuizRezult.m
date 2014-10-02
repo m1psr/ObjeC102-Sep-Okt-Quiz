@@ -75,6 +75,13 @@
     }
 }
 
+#pragma mark - IBActions
+
+- (IBAction)gotoQuizList:(id)sender {
+    // http://stackoverflow.com/questions/19841663/storyboard-navigate-to-root-view-controller
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 #pragma mark - PSRQuizHandler Methods
 
 - (void)handleQuize:(PSRQuiz *)quiz withQuestionIndex:(NSUInteger)index

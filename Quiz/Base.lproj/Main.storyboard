@@ -124,7 +124,13 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="J3c-4f-XvN"/>
+                    <navigationItem key="navigationItem" id="J3c-4f-XvN">
+                        <barButtonItem key="rightBarButtonItem" title="Список викторин" id="QE6-83-9YZ">
+                            <connections>
+                                <action selector="gotoQuizList:" destination="wsh-QY-uJJ" id="MKm-XO-mOw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="answersRight" destination="Eax-G1-bGm" id="oJb-f2-Q2a"/>
                         <outlet property="answersTotal" destination="MxA-Jz-Hlx" id="S9k-iO-e2X"/>
