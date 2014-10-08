@@ -18,7 +18,6 @@
 
 - (NSString *)quizTitleAtIndex:(NSUInteger)index;
 - (NSString *)quizAnnounceAtIndex:(NSUInteger)index;
-//- (UIImage *)quizImageAtIndex:(NSUInteger)index;
 - (PSRQuiz *)quizDataAtIndex:(NSUInteger)index;
 
 @end

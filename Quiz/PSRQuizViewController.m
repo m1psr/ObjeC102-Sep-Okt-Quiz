@@ -43,17 +43,8 @@
 
 - (void)setup
 {
-//    [self setupModel];
     [self setupViews];
 }
-
-
-//- (void)setupModel
-//{
-//    if (!self.aQuize) {
-//        self.aQuize = [[PSRQuizData sharedInstance] quizDataAtIndex:1];
-//    }
-//}
 
 - (void)setupViews
 {
@@ -63,7 +54,6 @@
     
     self.answersList.delegate = self;
     self.answersList.dataSource = self;
-//    [self.answersList reloadData];
 }
 
 - (PSRQuestion *)currentQuestion
