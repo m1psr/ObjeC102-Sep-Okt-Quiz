@@ -10,7 +10,7 @@
 
 @implementation NSMutableArray (PSRShuffling)
 
-- (void)shuffle
+- (void)psr_shuffle
 {
     NSUInteger count = [self count];
     for (NSUInteger i = 0; i < count; ++i) {

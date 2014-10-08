@@ -12,6 +12,6 @@
 
 @interface NSMutableArray (PSRShuffling)
 
-- (void)shuffle;
+- (void)psr_shuffle;
 
 @end

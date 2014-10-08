@@ -92,7 +92,7 @@ NSString *const kPSRQuizDataQuizDataKey = @"quizData";
             }
             [answers addObject:answer];
         }
-        [answers shuffle];
+        [answers psr_shuffle];
         
         UIImage *questionImage = questionData[@"image"] == [NSNull null] ? nil : questionData[@"image"];
         PSRQuestion *question = [PSRQuestion questionWithText:questionData[@"questionText"] image:questionImage answers:answers];
